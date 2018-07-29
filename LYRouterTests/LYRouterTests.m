@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "LYRouter.h"
 @interface LYRouterTests : XCTestCase
 
 @end
@@ -27,6 +27,23 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    [[LYRouter shareManager] runActionWithPath:@"keaiduo/set"];
+    
+    [[LYRouter shareManager] runActionWithPath:@"keaiduo/nslog"
+                                         query:@{@"warning":@"可爱多 🐶"}
+                                     completed:^(LYURIRequest *request) {
+                                         NSLog(@"LYTestObject test warning");
+                                     }];
+    
+    LYURIRequest *uriRequest = [LYURIRequest requestWithURI:[LYURI URIWithPath:@"keaiduo/multiplication"
+                                                                         query:@{@"multiplier":@5, @"multiplicand":@6}]
+                                               dataCallback:^id(id result, NSError *error) {
+                                                   NSLog(@"LYTestObject test product = %@", result);
+                                                   return nil;
+                                               }];
+    [[LYRouter shareManager] runingActionWithURIRequest:uriRequest];
+    
+    [[LYRouter shareManager] runActionWithURIString:@"liya:///keaiduo/nslog?warning=可爱多 🐶的吗"];
 }
 
 - (void)testPerformanceExample {
