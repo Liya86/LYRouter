@@ -42,8 +42,8 @@
 
  @return 默认的协议 @""，可更改
  */
-+ (NSString *)LYDefaultScheme;
-+ (void)setLYDefaultScheme:(NSString *)scheme;
++ (NSString *)defaultScheme;
++ (void)setDefaultScheme:(NSString *)scheme;
 
 - (void)appendQuery:(NSDictionary *)query;
 - (void)removeQuery:(NSArray *)keys;

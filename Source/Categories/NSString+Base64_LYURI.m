@@ -71,7 +71,9 @@
                                                         options:NSJSONReadingMutableContainers
                                                           error:&error];
     if(error) {
+#ifdef DEBUG
         NSAssert(NO, @"jsonString To Dictionary have error!");
+#endif
         return nil;
     }
     

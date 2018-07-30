@@ -39,11 +39,12 @@
                                                                          query:@{@"multiplier":@5, @"multiplicand":@6}]
                                                dataCallback:^id(id result, NSError *error) {
                                                    NSLog(@"LYTestObject test product = %@", result);
+                                                   NSAssert([result integerValue] == 30, @"结果出错");
                                                    return nil;
                                                }];
     [[LYRouter shareManager] runingActionWithURIRequest:uriRequest];
     
-    [[LYRouter shareManager] runActionWithURIString:@"liya:///keaiduo/nslog?warning=可爱多 🐶的吗"];
+    [[LYRouter shareManager] runActionWithURIString:@"edward:///keaiduo/nslog?warning=可爱多 🐶的吗"];
 }
 
 - (void)testPerformanceExample {

@@ -11,8 +11,8 @@
 @implementation LYTestObject
 
 + (void)load {
-    [LYURI setLYDefaultScheme:@"liya"];
-    [[LYRouter shareManager] addSchemes:@[@"liya"]];
+    [LYRouter setDefaultScheme:@"liya"];
+    [[LYRouter shareManager] addSchemes:@[@"edward"]];
     
     [[LYRouter shareManager] addToPath:@"keaiduo/set" withRegisterActionBlock:^(LYURIRequest *action) {
         int a = 2;

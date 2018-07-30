@@ -23,11 +23,11 @@ static NSString *LYDefaultScheme = @"";
 @implementation LYURI
 
 #pragma mark - 默认协议名称
-+ (NSString *)LYDefaultScheme {
++ (NSString *)defaultScheme {
     return LYDefaultScheme;
 }
 
-+ (void)setLYDefaultScheme:(NSString *)scheme {
++ (void)setDefaultScheme:(NSString *)scheme {
     LYDefaultScheme = scheme ?: @"";
 }
 

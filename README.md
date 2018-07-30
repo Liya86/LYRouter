@@ -8,8 +8,8 @@ pod 'LYRouter'
 设置默认协议、合法域名
 
 ```
-[LYURI setLYDefaultScheme:@"liya"];
-[[LYRouter shareManager] addSchemes:@[@"liya"]];
+  [LYRouter setDefaultScheme:@"liya"];
+  [[LYRouter shareManager] addSchemes:@[@"edward"]];
 ```
 
 注册协议

@@ -16,7 +16,13 @@
 + (instancetype)shareManager;
 
 /**
- 添加符合的协议
+ 设置默认协议-LYURI中的设置方法，并将协议添加进合法协议组
+
+ @param scheme 默认协议
+ */
++ (void)setDefaultScheme:(NSString *)scheme;
+/**
+ 添加合法的协议
 
  @param objects 协议数组
  */

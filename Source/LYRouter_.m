@@ -7,10 +7,69 @@
 //
 
 #import "LYRouter_.h"
-#import "LYURIRegisterAction.h"
 #import "LYURIRequest.h"
 #import "LYURI.h"
 #import <UIKit/UIApplication.h>
+
+#pragma mark - 内建类 LYURIRegisterAction
+@interface LYURIRegisterAction: NSObject
+@property (nonatomic, assign) NSInteger priority;
+@property (nonatomic, copy) void (^actionBlock)(LYURIRequest *);
+
++ (instancetype)URIRegisterActionWith:(NSInteger)proirit actionBlock:(void(^)(LYURIRequest *))actionBlock;
+@end
+
+@implementation LYURIRegisterAction
++ (instancetype)URIRegisterActionWith:(NSInteger)proirit actionBlock:(void(^)(LYURIRequest *))actionBlock {
+    LYURIRegisterAction *action = [[LYURIRegisterAction alloc] init];
+    action.priority = proirit;
+    action.actionBlock = actionBlock;
+    return action;
+}
+@end
+
+#pragma mark - 内建类 LYURIRegisterActionStore
+@interface LYURIRegisterActionStore: NSObject
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, strong) NSArray <LYURIRegisterAction *>* actions;
+
++ (instancetype)URIRegisterActionStoreWith:(NSString *)path;
+
+- (void)addRegisterAction:(LYURIRegisterAction *)registerAction;
+@end
+
+@implementation LYURIRegisterActionStore
++ (instancetype)URIRegisterActionStoreWith:(NSString *)path {
+    if (path == nil) {
+        return nil;
+    }
+    LYURIRegisterActionStore *store = [[LYURIRegisterActionStore alloc] init];
+    store.path = path;
+    return store;
+}
+
+- (void)addRegisterAction:(LYURIRegisterAction *)registerAction {
+    if (registerAction == nil) {
+        return;
+    }
+    NSMutableArray <LYURIRegisterAction *>*actions = [NSMutableArray arrayWithArray:self.actions];
+    NSInteger index = [actions indexOfObjectPassingTest:^BOOL(LYURIRegisterAction * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.priority < registerAction.priority) {
+            *stop = YES;
+            return YES;
+        }
+        return NO;
+    }];
+    if (index != NSNotFound) {
+        [actions insertObject:registerAction atIndex:index];
+    } else {
+        [actions addObject:registerAction];
+    }
+    self.actions = actions.copy;
+}
+@end
+
+#pragma mark - LYRouter
 
 @interface LYRouter()
 @property (nonatomic, strong) NSArray<NSString *> *schemes; //符合的协议
@@ -41,6 +100,13 @@
 }
 
 #pragma mark - match
++ (void)setDefaultScheme:(NSString *)scheme {
+    [LYURI setDefaultScheme:scheme];
+    if (scheme.length) {
+        [[LYRouter shareManager] addSchemes:@[scheme]];
+    }
+}
+
 - (void)addSchemes:(NSArray <NSString *>*)objects {
     if (!objects.count) {
         return;
@@ -84,11 +150,14 @@
 }
 
 #pragma mark - uri's register
-- (void)addToPath:(NSString *)path proirit:(NSInteger)proirit withRegisterActionBlock:(void (^)(LYURIRequest *action))actionBlock {
-    if (!actionBlock || !path) {
+- (void)addToPath:(NSString *)path_ proirit:(NSInteger)proirit withRegisterActionBlock:(void (^)(LYURIRequest *action))actionBlock {
+    if (!actionBlock || !path_) {
+#ifdef DEBUG
         NSAssert(NO, @"URI block or path params is nil!");
+#endif
         return;
     }
+    NSString *path = path_.lowercaseString;
     
     [self.recursiveLock lock];
     

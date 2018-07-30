@@ -16,7 +16,6 @@
 		6A3FD6A1210E0EE100EAFC0D /* LYRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6A0210E0EE100EAFC0D /* LYRouterTests.m */; };
 		6A3FD6B6210E0F0E00EAFC0D /* LYRouter_.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6AE210E0F0C00EAFC0D /* LYRouter_.m */; };
 		6A3FD6B7210E0F0E00EAFC0D /* LYURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6AF210E0F0D00EAFC0D /* LYURI.m */; };
-		6A3FD6B8210E0F0E00EAFC0D /* LYURIRegisterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6B3210E0F0E00EAFC0D /* LYURIRegisterAction.m */; };
 		6A3FD6B9210E0F0E00EAFC0D /* LYURIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6B5210E0F0E00EAFC0D /* LYURIRequest.m */; };
 		6A3FD6BE210E0F1E00EAFC0D /* NSObject+Json_LYURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6BB210E0F1D00EAFC0D /* NSObject+Json_LYURI.m */; };
 		6A3FD6BF210E0F1E00EAFC0D /* NSString+Base64_LYURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FD6BC210E0F1E00EAFC0D /* NSString+Base64_LYURI.m */; };
@@ -47,13 +46,11 @@
 		6A3FD69C210E0EE100EAFC0D /* LYRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3FD6A0210E0EE100EAFC0D /* LYRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRouterTests.m; sourceTree = "<group>"; };
 		6A3FD6A2210E0EE100EAFC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A3FD6AD210E0F0C00EAFC0D /* LYURIRegisterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYURIRegisterAction.h; sourceTree = "<group>"; };
 		6A3FD6AE210E0F0C00EAFC0D /* LYRouter_.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRouter_.m; sourceTree = "<group>"; };
 		6A3FD6AF210E0F0D00EAFC0D /* LYURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURI.m; sourceTree = "<group>"; };
 		6A3FD6B0210E0F0D00EAFC0D /* LYRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRouter.h; sourceTree = "<group>"; };
 		6A3FD6B1210E0F0D00EAFC0D /* LYRouter_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRouter_.h; sourceTree = "<group>"; };
 		6A3FD6B2210E0F0D00EAFC0D /* LYURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYURI.h; sourceTree = "<group>"; };
-		6A3FD6B3210E0F0E00EAFC0D /* LYURIRegisterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURIRegisterAction.m; sourceTree = "<group>"; };
 		6A3FD6B4210E0F0E00EAFC0D /* LYURIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYURIRequest.h; sourceTree = "<group>"; };
 		6A3FD6B5210E0F0E00EAFC0D /* LYURIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYURIRequest.m; sourceTree = "<group>"; };
 		6A3FD6BA210E0F1D00EAFC0D /* NSObject+Json_LYURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Json_LYURI.h"; sourceTree = "<group>"; };
@@ -131,13 +128,11 @@
 		6A3FD6AB210E0EE900EAFC0D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6A3FD6B0210E0F0D00EAFC0D /* LYRouter.h */,
 				6A3FD6B1210E0F0D00EAFC0D /* LYRouter_.h */,
 				6A3FD6AE210E0F0C00EAFC0D /* LYRouter_.m */,
-				6A3FD6B0210E0F0D00EAFC0D /* LYRouter.h */,
 				6A3FD6B2210E0F0D00EAFC0D /* LYURI.h */,
 				6A3FD6AF210E0F0D00EAFC0D /* LYURI.m */,
-				6A3FD6AD210E0F0C00EAFC0D /* LYURIRegisterAction.h */,
-				6A3FD6B3210E0F0E00EAFC0D /* LYURIRegisterAction.m */,
 				6A3FD6B4210E0F0E00EAFC0D /* LYURIRequest.h */,
 				6A3FD6B5210E0F0E00EAFC0D /* LYURIRequest.m */,
 				6A3FD6AC210E0EF500EAFC0D /* Categories */,
@@ -265,7 +260,6 @@
 				6A3FD6B9210E0F0E00EAFC0D /* LYURIRequest.m in Sources */,
 				6A3FD6BF210E0F1E00EAFC0D /* NSString+Base64_LYURI.m in Sources */,
 				6A3FD6B6210E0F0E00EAFC0D /* LYRouter_.m in Sources */,
-				6A3FD6B8210E0F0E00EAFC0D /* LYURIRegisterAction.m in Sources */,
 				6A3FD6B7210E0F0E00EAFC0D /* LYURI.m in Sources */,
 				6A3FD6C2210E0F2F00EAFC0D /* LYTestObject.m in Sources */,
 			);
@@ -357,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -406,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
