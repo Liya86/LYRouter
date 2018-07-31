@@ -184,7 +184,7 @@
 }
 
 #pragma mark - uri's run
-- (BOOL)runingActionWithURIRequest:(LYURIRequest *)action completed:(void(^)(LYURIRequest *))completed {
+- (BOOL)runWithURIRequest:(LYURIRequest *)action completed:(void(^)(LYURIRequest *))completed {
     LYURI *uri = action.uri;
     if (!uri.path.length) {
         if (completed) {
@@ -218,36 +218,36 @@
     return action.hasRuned;
 }
 
-- (BOOL)runingActionWithURIRequest:(LYURIRequest *)action {
-    return [self runingActionWithURIRequest:action completed:nil];
+- (BOOL)runWithURIRequest:(LYURIRequest *)action {
+    return [self runWithURIRequest:action completed:nil];
 }
 
-- (BOOL)runActionWithURI:(LYURI *)uri completed:(void(^)(LYURIRequest *))completed {
-    return [self runingActionWithURIRequest:[LYURIRequest requestWithURI:uri] completed:completed];
+- (BOOL)runWithURI:(LYURI *)uri completed:(void(^)(LYURIRequest *))completed {
+    return [self runWithURIRequest:[LYURIRequest requestWithURI:uri] completed:completed];
 }
 
-- (BOOL)runActionWithURI:(LYURI *)uri {
-    return [self runActionWithURI:uri completed:nil];
+- (BOOL)runWithURI:(LYURI *)uri {
+    return [self runWithURI:uri completed:nil];
 }
 
-- (BOOL)runActionWithURIString:(NSString *)uri completed:(void(^)(LYURIRequest *))completed {
-    return [self runActionWithURI:[LYURI URIWithUriString:uri] completed:completed];
+- (BOOL)runWithURIString:(NSString *)uri completed:(void(^)(LYURIRequest *))completed {
+    return [self runWithURI:[LYURI URIWithUriString:uri] completed:completed];
 }
 
-- (BOOL)runActionWithURIString:(NSString *)uri {
-    return [self runActionWithURI:[LYURI URIWithUriString:uri]];
+- (BOOL)runWithURIString:(NSString *)uri {
+    return [self runWithURI:[LYURI URIWithUriString:uri]];
 }
 
-- (BOOL)runActionWithPath:(NSString *)path query:(NSDictionary *)query completed:(void(^)(LYURIRequest *))completed {
-    return [self runActionWithURI:[LYURI URIWithPath:path query:query] completed:completed];
+- (BOOL)runWithPath:(NSString *)path query:(NSDictionary *)query completed:(void(^)(LYURIRequest *))completed {
+    return [self runWithURI:[LYURI URIWithPath:path query:query] completed:completed];
 }
 
-- (BOOL)runActionWithPath:(NSString *)path completed:(void(^)(LYURIRequest *))completed {
-    return [self runActionWithURI:[LYURI URIWithPath:path query:nil] completed:completed];
+- (BOOL)runWithPath:(NSString *)path completed:(void(^)(LYURIRequest *))completed {
+    return [self runWithURI:[LYURI URIWithPath:path query:nil] completed:completed];
 }
 
-- (BOOL)runActionWithPath:(NSString *)path {
-    return [self runActionWithURI:[LYURI URIWithPath:path query:nil] completed:nil];
+- (BOOL)runWithPath:(NSString *)path {
+    return [self runWithURI:[LYURI URIWithPath:path query:nil] completed:nil];
 }
 
 @end

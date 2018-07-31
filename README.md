@@ -4,7 +4,7 @@
 * 引入：
 pod 'LYRouter'
 
-* 使用
+* 使用  
 设置默认协议、合法域名
 
 ```
@@ -31,7 +31,7 @@ pod 'LYRouter'
 协议调用
 
 ```
-[[LYRouter shareManager] runActionWithPath:@"keaiduo/nslog"
+[[LYRouter shareManager] runWithPath:@"keaiduo/nslog"
                                          query:@{@"warning":@"可爱多 🐶"}
                                      completed:nil];
 
@@ -41,7 +41,7 @@ LYURIRequest *uriRequest = [LYURIRequest requestWithURI:[LYURI URIWithPath:@"kea
                                                    NSLog(@"LYTestObject test product = %@", result);
                                                    return nil;
                                                                                                  }];
-[[LYRouter shareManager] runingActionWithURIRequest:uriRequest];
+[[LYRouter shareManager] runWithURIRequest:uriRequest];
 ```
 
 

@@ -27,9 +27,9 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    [[LYRouter shareManager] runActionWithPath:@"keaiduo/set"];
+    [[LYRouter shareManager] runWithPath:@"keaiduo/set"];
     
-    [[LYRouter shareManager] runActionWithPath:@"keaiduo/nslog"
+    [[LYRouter shareManager] runWithPath:@"keaiduo/nslog"
                                          query:@{@"warning":@"可爱多 🐶"}
                                      completed:^(LYURIRequest *request) {
                                          NSLog(@"LYTestObject test warning");
@@ -42,9 +42,9 @@
                                                    NSAssert([result integerValue] == 30, @"结果出错");
                                                    return nil;
                                                }];
-    [[LYRouter shareManager] runingActionWithURIRequest:uriRequest];
+    [[LYRouter shareManager] runWithURIRequest:uriRequest];
     
-    [[LYRouter shareManager] runActionWithURIString:@"edward:///keaiduo/nslog?warning=可爱多 🐶的吗"];
+    [[LYRouter shareManager] runWithURIString:@"edward:///keaiduo/nslog?warning=可爱多 🐶的吗"];
 }
 
 - (void)testPerformanceExample {

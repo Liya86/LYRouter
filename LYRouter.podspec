@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = "Liya86"
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/Liya86/LYRouter.git", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/Liya86/LYRouter.git", :tag => "1.0.1" }
   s.source_files = "Source/**/*.{h,m}"
   s.frameworks   = "Foundation", "UIKit"
   s.requires_arc = true

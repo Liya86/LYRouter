@@ -49,17 +49,17 @@
  @param completed uri执行成功后的操作
  @return 是否已执行
  */
-- (BOOL)runingActionWithURIRequest:(LYURIRequest *)action completed:(void(^)(LYURIRequest *))completed;
-- (BOOL)runingActionWithURIRequest:(LYURIRequest *)action;
+- (BOOL)runWithURIRequest:(LYURIRequest *)action completed:(void(^)(LYURIRequest *))completed;
+- (BOOL)runWithURIRequest:(LYURIRequest *)action;
 
-- (BOOL)runActionWithURI:(LYURI *)uri completed:(void(^)(LYURIRequest *))completed;
-- (BOOL)runActionWithURI:(LYURI *)uri;
+- (BOOL)runWithURI:(LYURI *)uri completed:(void(^)(LYURIRequest *))completed;
+- (BOOL)runWithURI:(LYURI *)uri;
 
-- (BOOL)runActionWithURIString:(NSString *)uri completed:(void(^)(LYURIRequest *))completed;
-- (BOOL)runActionWithURIString:(NSString *)uri;
+- (BOOL)runWithURIString:(NSString *)uri completed:(void(^)(LYURIRequest *))completed;
+- (BOOL)runWithURIString:(NSString *)uri;
 
-- (BOOL)runActionWithPath:(NSString *)path query:(NSDictionary *)query completed:(void(^)(LYURIRequest *))completed;
-- (BOOL)runActionWithPath:(NSString *)path completed:(void(^)(LYURIRequest *))completed;
-- (BOOL)runActionWithPath:(NSString *)path;
+- (BOOL)runWithPath:(NSString *)path query:(NSDictionary *)query completed:(void(^)(LYURIRequest *))completed;
+- (BOOL)runWithPath:(NSString *)path completed:(void(^)(LYURIRequest *))completed;
+- (BOOL)runWithPath:(NSString *)path;
 
 @end
